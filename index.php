@@ -1,5 +1,5 @@
 <?php
-require('dbconnect.php');
+//require('dbconnect.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,10 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     //con
-    dbConn();
+    $conn = mysqli_init(); 
+	mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
+	mysqli_real_connect($conn, "note95-server.mysql.database.azure.com", "sidewerzsl", "G4M516SRX7M6BUEM$", "note95-database", 3306, MYSQLI_CLIENT_SSL);
+
 
     $sql = "SELECT * FROM note_table WHERE id=$id";
     $result = mysqli_query($conn, $sql);
@@ -188,7 +191,10 @@ document.addEventListener('mousemove', function(event) {
                 <?php
 
                 // Create connection
-                dbConn();
+                $conn = mysqli_init(); 
+	            mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
+	            mysqli_real_connect($conn, "note95-server.mysql.database.azure.com", "sidewerzsl", "G4M516SRX7M6BUEM$", "note95-database", 3306, MYSQLI_CLIENT_SSL);
+
 
                 
                 if (isset($_GET['filter_to']))

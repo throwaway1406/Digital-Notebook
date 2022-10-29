@@ -1,11 +1,10 @@
 <?php
-require('dbconnect.php');
+//require('dbconnect.php');
 
-dbConn();
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+$conn = mysqli_init(); 
+mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
+mysqli_real_connect($conn, "note95-server.mysql.database.azure.com", "sidewerzsl", "G4M516SRX7M6BUEM$", "note95-database", 3306, MYSQLI_CLIENT_SSL);
+
 
 $id = $_REQUEST['id'];
 $note = htmlentities($_REQUEST['note_input']);

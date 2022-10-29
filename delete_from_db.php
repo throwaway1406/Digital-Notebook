@@ -1,14 +1,13 @@
 <?php
-require('dbconnect.php');
+//require('dbconnect.php');
 //if a user accesses this url themselves, they could remove ids that don't exist (error) so we
 //need to check that as well
 
 // Create connection
-dbConn();
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+$conn = mysqli_init(); 
+mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
+mysqli_real_connect($conn, "note95-server.mysql.database.azure.com", "sidewerzsl", "G4M516SRX7M6BUEM$", "note95-database", 3306, MYSQLI_CLIENT_SSL);
+
 
 $id = $_GET['id'];
 
