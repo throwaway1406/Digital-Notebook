@@ -3,7 +3,7 @@
 $host = 'note95-server.mysql.database.azure.com';
 $username = 'sidewerzsl';
 $password = 'G4M516SRX7M6BUEM$';
-$db_name = 'note95-database';
+$db_name = 'mysql';
 
 //Establishes the connection
 $conn = mysqli_init();
