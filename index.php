@@ -15,7 +15,7 @@ $sql = "CREATE TABLE `note_table` (
   `id` int(255) NOT NULL,
   `note` mediumtext NOT NULL,
   `tags` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1";
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 
 if (mysqli_query($conn, $sql)) {
   echo "Table MyGuests created successfully";
