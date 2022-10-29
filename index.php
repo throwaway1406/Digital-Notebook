@@ -6,11 +6,9 @@ $password = 'G4M516SRX7M6BUEM$';
 $db_name = 'note95-db';
 
 //Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
+$con = mysqli_init(); 
+mysqli_ssl_set($con,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
+mysqli_real_connect($conn, "note95-server.mysql.database.azure.com", "sidewerzsl", "G4M516SRX7M6BUEM$", "note-database", 3306, MYSQLI_CLIENT_SSL);
 
 //Close the connection
 mysqli_close($conn);
