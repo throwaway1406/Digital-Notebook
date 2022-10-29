@@ -1,9 +1,9 @@
 <?php
 
-$host = 'note95-server.mysql.database.azure.com';
+$host = 'tcp:note95-server.database.windows.net,1433';
 $username = 'sidewerzsl';
 $password = 'G4M516SRX7M6BUEM$';
-$db_name = 'mysql';
+$db_name = 'note95-db';
 
 //Establishes the connection
 $conn = mysqli_init();
