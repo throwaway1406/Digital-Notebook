@@ -1,6 +1,6 @@
 <?php
 
-$host = 'tcp:note95-server.database.windows.net,1433';
+$host = 'note95-server.database.windows.net';
 $username = 'sidewerzsl';
 $password = 'G4M516SRX7M6BUEM$';
 $db_name = 'note95-db';
