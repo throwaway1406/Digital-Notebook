@@ -17,10 +17,10 @@ $sql = "CREATE TABLE `note_table` (
   `tags` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($con, $sql)) {
   echo "Table MyGuests created successfully";
 } else {
-  echo "Error creating table: " . mysqli_error($conn);
+  echo "Error creating table: " . mysqli_error($con);
 }
 
 //Close the connection
