@@ -22,9 +22,12 @@ if (isset($_GET['id'])) {
   //this is just so we can access the note input for a given id (if an id is specified in the url)
   // Create connection
   if (isset($_GET['id'])) {
+
     $id = $_GET['id'];
+
     //con
     dbConn();
+
     $sql = "SELECT * FROM note_table WHERE id=$id";
     $result = mysqli_query($conn, $sql);
 
@@ -183,12 +186,9 @@ document.addEventListener('mousemove', function(event) {
                 </form>
 				<div class="notepad-content">
                 <?php
+
                 // Create connection
                 dbConn();
-                // Check connection
-                if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-                }
 
                 
                 if (isset($_GET['filter_to']))
