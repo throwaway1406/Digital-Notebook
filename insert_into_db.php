@@ -1,26 +1,34 @@
 <?php
-//require('dbconnect.php');
 
-$conn = mysqli_init(); 
-mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
-mysqli_real_connect($conn, "note95-server.mysql.database.azure.com", "sidewerzsl", "G4M516SRX7M6BUEM$", "note95-database", 3306, MYSQLI_CLIENT_SSL);
+date_default_timezone_set("Europe/London");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+    $conn = mysqli_init(); 
+	mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
+	mysqli_real_connect($conn, "note95-server.mysql.database.azure.com", "sidewerzsl", "G4M516SRX7M6BUEM$", "note95-database", 3306, MYSQLI_CLIENT_SSL);
 
 
 $id = $_REQUEST['id'];
 $note = htmlentities($_REQUEST['note_input']);
 $tags = htmlentities($_REQUEST['tag_input']);
+$title = htmlentities($_REQUEST['title_input']);
 
 //check if the user is adding a new note or modifying an existing note)
 
 //user is updating a note
 if ($id != ""){
     $sql = "UPDATE note_table SET
+            title='$title',
             note='$note',
             tags='$tags'
             WHERE id='$id'";
 } else {
 //user is creating a new note
-    $sql = "INSERT INTO note_table (note, tags) VALUES ('$note', '$tags')";
+    $date = date('d/m/Y H:i:s');
+    $sql = "INSERT INTO note_table (title, note, tags, `date`) VALUES ('$title', '$note', '$tags', '$date')";
 }
 
 if (mysqli_query($conn, $sql)) {
