@@ -8,19 +8,19 @@
     $sql = "ALTER TABLE `note_table` ADD `title` VARCHAR(1000000) NOT NULL AFTER `id`";
     $result = mysqli_query($conn, $sql);
 
-    if (mysqli_query($con, $sql)) {
+    if (mysqli_query($conn, $sql)) {
       echo "Query 1";
     } else {
-      echo "Error: " . mysqli_error($con);
+      echo "Error: " . mysqli_error($conn);
     }
 
     $sql = "ALTER TABLE `note_table` ADD `date` VARCHAR(1000000) NOT NULL AFTER `tags`";
     $result = mysqli_query($conn, $sql);
 
-    if (mysqli_query($con, $sql)) {
+    if (mysqli_query($conn, $sql)) {
       echo "Query 2";
     } else {
-      echo "Error: " . mysqli_error($con);
+      echo "Error: " . mysqli_error($conn);
     }
 
     mysqli_close($conn);
