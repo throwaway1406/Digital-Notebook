@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Note95</title>
 <link rel="stylesheet" href="notepad.css">
 <style>
 .monitor {
