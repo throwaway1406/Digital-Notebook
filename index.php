@@ -405,7 +405,7 @@ if (isset($_GET['id'])) {
   <!--<label for="note_input">Note:</label>-->
 
 <!-- Notepad editor -->
-<div class="container" id="notepad_editor" style="position:absolute; top: 10px; left: 500px; width: 700px; height:500px;">
+<div class="container" id="notepad_editor" style="position:absolute; top: 25px; left: 500px; width: 700px; height:500px;">
     <div class="notepad">
         <div class="notepad-bar">
             <div class="notepad-icon">
@@ -438,7 +438,7 @@ if (isset($_GET['id'])) {
         <textarea id="note_input" name="note_input" style="font-size: 18px; width: 100%; height: 100%; border: none; overflow: auto; outline: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; resize: none;"><?php echo $note_to_view_or_edit; ?></textarea><br>
         </div> <!-- notepad content --><br>
         <label for="title_input">Title:</label>
-        <textarea id="title_input" name="title_input" rows="1" cols="20" style="display: inline-block; border: none; overflow: auto; outline: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; resize: none;"><?php echo $title_to_view_or_edit; ?></textarea>
+        <textarea id="title_input" name="title_input" rows="1" cols="30" style="display: inline-block; border: none; overflow: auto; outline: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; resize: none;"><?php echo $title_to_view_or_edit; ?></textarea>
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
         <label for="tag_input">Tags:</label>
         <textarea id="tag_input" name="tag_input" rows="1" cols="20" style="display: inline-block; border: none; overflow: auto; outline: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; resize: none;"><?php echo $tags_to_view_or_edit; ?></textarea>
